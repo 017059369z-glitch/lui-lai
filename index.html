@@ -44,11 +44,22 @@
   </style>
 </head>
 <body>
-  Lùi lại ngay
-  <div class="icons">👁️ 💀 👻 🔪 🩸</div>
-  <audio autoplay loop>
-    <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
-    Trình duyệt của bạn không hỗ trợ âm thanh.
-  </audio>
+  LÙI LẠI NGAY - TRÁNH XA MÀN HÌNH RA
+  <div class="icons"> 💀 👁️ 👻</div>
+  <audio id="alarm" loop>
+  <source src="https://www.soundjay.com/button/beep-07.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener('load', () => {
+    const audio = document.getElementById('alarm');
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Trình duyệt chặn tự động phát âm thanh. Hãy nhấp vào trang để bắt đầu.");
+      });
+    }
+  });
+</script>
 </body>
 </html>
