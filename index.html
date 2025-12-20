@@ -9,10 +9,11 @@
       color: red;
       font-family: 'Arial Black', sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-size: 4em;
+      font-size: 3em;
       animation: flash 1s infinite, shake 0.5s infinite;
     }
 
@@ -34,10 +35,17 @@
       90% { transform: translate(1px, 2px) rotate(0deg); }
       100% { transform: translate(1px, -2px) rotate(-1deg); }
     }
+
+    .icons {
+      font-size: 2em;
+      margin-top: 20px;
+      animation: flash 1s infinite;
+    }
   </style>
 </head>
 <body>
   Lùi lại ngay
+  <div class="icons">👁️ 💀 👻 🔪 🩸</div>
   <audio autoplay loop>
     <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
     Trình duyệt của bạn không hỗ trợ âm thanh.
