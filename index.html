@@ -13,8 +13,9 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-size: 4em;
+      font-size: 5em; /* Cỡ chữ chính */
       animation: flash 1s infinite, shake 0.5s infinite;
+      text-align: center;
     }
 
     @keyframes flash {
@@ -37,29 +38,32 @@
     }
 
     .icons {
-      font-size: 4em;
+      font-size: 3em; /* Cỡ biểu tượng */
       margin-top: 20px;
       animation: flash 1s infinite;
     }
   </style>
 </head>
 <body>
-  LÙI LẠI NGAY - TRÁNH XA MÀN HÌNH RA
-  <div class="icons"> 💀 👁️ 👻</div>
-  <audio id="alarm" loop>
-  <source src="https://www.soundjay.com/button/beep-07.mp3" type="audio/mpeg">
-</audio>
+  LÙI LẠI NGAY TRÁNH XA MÀN HÌNH RA
+  <div class="icons">👁️ 💀 👻 </div>
 
-<script>
-  window.addEventListener('load', () => {
-    const audio = document.getElementById('alarm');
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.log("Trình duyệt chặn tự động phát âm thanh. Hãy nhấp vào trang để bắt đầu.");
-      });
-    }
-  });
-</script>
+  <audio id="alarm" loop>
+    <source src="https://www.soundjay.com/button/beep-07.mp3" type="audio/mpeg">
+    <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+    Trình duyệt của bạn không hỗ trợ âm thanh.
+  </audio>
+
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('alarm');
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Trình duyệt chặn tự động phát âm thanh. Hãy nhấp vào trang để bắt đầu.");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
